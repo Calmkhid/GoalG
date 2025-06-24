@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Goal Genius - Football predictions and betting tips">
+    <title>Goal Genius - Football Predictions</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Goal Genius Logo">
+                    <span>Goal Genius</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="predictions.html">PREDICTIONS</a></li>
+                </ul>
+            </nav>
+            <div class="auth-button" id="auth-button-container">
+                <a href="signin.html" class="sign-in-btn">SIGN IN</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Expert Football Predictions</h1>
+                <p>Get winning predictions for matches around the world</p>
+                <div class="cta-buttons">
+                    <a href="predictions.html" class="cta-btn primary">Today's Predictions</a>
+                    <a href="signup.html" class="cta-btn secondary">Join VIP</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="prediction-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="predictions.html?day=yesterday">Yesterday</a></li>
+                    <li><a href="predictions.html?day=today" class="active">Today</a></li>
+                    <li><a href="predictions.html?day=tomorrow">Tomorrow</a></li>
+                    <li><a href="vip.html">VIP</a></li>
+                    <li><a href="vvip.html">VVIP</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="featured-predictions">
+            <div class="container">
+                <h2>Featured Predictions</h2>
+                <div class="prediction-cards">
+                    <!-- Prediction cards will be dynamically generated -->
+                    <div class="prediction-card">
+                        <div class="match-info">
+                            <span class="league">Premier League</span>
+                            <span class="time">15:00</span>
+                            <h3>Manchester City vs Liverpool</h3>
+                        </div>
+                        <div class="prediction-details">
+                            <div class="prediction-type">1X2</div>
+                            <div class="prediction-value">Home Win</div>
+                            <div class="odds">1.85</div>
+                        </div>
+                    </div>
+                    <div class="prediction-card">
+                        <div class="match-info">
+                            <span class="league">La Liga</span>
+                            <span class="time">20:00</span>
+                            <h3>Barcelona vs Real Madrid</h3>
+                        </div>
+                        <div class="prediction-details">
+                            <div class="prediction-type">Over/Under</div>
+                            <div class="prediction-value">Over 2.5</div>
+                            <div class="odds">1.95</div>
+                        </div>
+                    </div>
+                    <div class="prediction-card">
+                        <div class="match-info">
+                            <span class="league">Serie A</span>
+                            <span class="time">18:30</span>
+                            <h3>Juventus vs Inter Milan</h3>
+                        </div>
+                        <div class="prediction-details">
+                            <div class="prediction-type">Both Teams to Score</div>
+                            <div class="prediction-value">Yes</div>
+                            <div class="odds">1.75</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="predictions.html" class="btn">View All Predictions</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <p>"Goal Genius has been my go-to for football predictions for months. Their VIP tips are incredibly accurate!"</p>
+                        <div class="testimonial-author">- Michael S.</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"I've won consistently with their predictions. The analysis they provide with each tip is invaluable."</p>
+                        <div class="testimonial-author">- Sarah T.</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The VVIP membership is worth every penny. These guys really know their football!"</p>
+                        <div class="testimonial-author">- James L.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Goal Genius Logo">
+                    <p>Goal Genius</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="predictions.html">Predictions</a></li>
+                        <li><a href="vip.html">VIP</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-legal">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest predictions and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Goal Genius. All Rights Reserved.</p>
+                <p class="disclaimer">18+ | Gamble Responsibly</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Explicitly check login status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const userToken = localStorage.getItem('userToken');
+            const authButtonContainer = document.getElementById('auth-button-container');
+            
+            if (userToken && authButtonContainer) {
+                // User is logged in, show dashboard button
+                authButtonContainer.innerHTML = '<a href="dashboard.html" class="sign-in-btn">DASHBOARD</a>';
+            }
+        });
+    </script>
+</body>
+</html> 

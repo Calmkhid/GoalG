@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #e53e3e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .logged-in {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .logged-out {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .auth-details {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Authentication Status Test</h1>
+        
+        <div id="status">
+            Checking authentication status...
+        </div>
+        
+        <div class="buttons">
+            <button id="sign-in">Sign In (Test)</button>
+            <button id="sign-out">Sign Out</button>
+            <button id="refresh">Refresh Status</button>
+            <button id="go-home">Go to Home Page</button>
+            <button id="go-dashboard">Go to Dashboard</button>
+        </div>
+        
+        <div class="auth-details">
+            <h2>Authentication Details</h2>
+            <table id="auth-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>User Token</td>
+                    <td id="user-token">Not found</td>
+                </tr>
+                <tr>
+                    <td>User Email</td>
+                    <td id="user-email">Not found</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        // Check auth status on page load
+        function checkAuthStatus() {
+            const userToken = localStorage.getItem('userToken');
+            const userEmail = localStorage.getItem('userEmail');
+            const statusDiv = document.getElementById('status');
+            
+            if (userToken) {
+                // User is logged in
+                statusDiv.textContent = 'You are logged in.';
+                statusDiv.className = 'logged-in';
+                document.getElementById('user-token').textContent = userToken;
+                document.getElementById('user-email').textContent = userEmail || 'No email found';
+            } else {
+                // User is not logged in
+                statusDiv.textContent = 'You are not logged in.';
+                statusDiv.className = 'logged-out';
+                document.getElementById('user-token').textContent = 'Not found';
+                document.getElementById('user-email').textContent = 'Not found';
+            }
+        }
+        
+        // Sign in (test)
+        document.getElementById('sign-in').addEventListener('click', function() {
+            const email = prompt('Enter your email for test sign in:') || 'test@example.com';
+            localStorage.setItem('userToken', 'test-token-' + Date.now());
+            localStorage.setItem('userEmail', email);
+            checkAuthStatus();
+            alert('Test sign in successful! Try going to the home page now to see if the DASHBOARD button appears.');
+        });
+        
+        // Sign out
+        document.getElementById('sign-out').addEventListener('click', function() {
+            localStorage.removeItem('userToken');
+            localStorage.removeItem('userEmail');
+            checkAuthStatus();
+            alert('Signed out successfully! The SIGN IN button should now appear on all pages.');
+        });
+        
+        // Refresh status
+        document.getElementById('refresh').addEventListener('click', function() {
+            checkAuthStatus();
+        });
+        
+        // Go to home page
+        document.getElementById('go-home').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+        
+        // Go to dashboard
+        document.getElementById('go-dashboard').addEventListener('click', function() {
+            window.location.href = 'dashboard.html';
+        });
+        
+        // Check status on page load
+        document.addEventListener('DOMContentLoaded', checkAuthStatus);
+    </script>
+</body>
+</html> 
